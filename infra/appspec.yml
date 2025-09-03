@@ -1,0 +1,10 @@
+version: 0.0
+files:
+  - source: /
+    destination: /var/application/l1_automation
+
+hooks:
+  BeforeInstall:
+    - location: infra/scripts/cleanup.sh
+      timeout: 30
+      runas: root
