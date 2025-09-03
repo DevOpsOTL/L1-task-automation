@@ -2,4 +2,9 @@ version: 0.0
 files:
   - source: /
     destination: /var/application/l1_automation
-file_exists_behavior: OVERWRITE
+
+hooks:
+  BeforeInstall:
+    - location: scripts/cleanup.sh
+      timeout: 30
+      runas: root
